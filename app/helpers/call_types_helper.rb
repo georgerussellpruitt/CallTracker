@@ -1,0 +1,2 @@
+module CallTypesHelper
+end

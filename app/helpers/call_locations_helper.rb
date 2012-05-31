@@ -1,0 +1,2 @@
+module CallLocationsHelper
+end

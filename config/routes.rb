@@ -1,5 +1,19 @@
 Calltracker::Application.routes.draw do
 
+  resources :calls
+
+  resources :groups
+
+  resources :call_locations
+
+  resources :contact_types
+
+  resources :contacts
+
+  resources :call_types
+
+  resources :user_locations
+
   devise_for :users
   root :to => "home#index"
 

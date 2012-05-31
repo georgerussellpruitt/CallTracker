@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  call_start: 2012-04-09 15:23:03
+  call_end: 2012-04-09 15:23:03
+  call_reason: MyString
+  call_notes: MyString
+  call_location_id: 1
+  call_type_id: 1
+  contact_id: 1
+  contact_type_id: 1
+
+two:
+  user_id: 1
+  call_start: 2012-04-09 15:23:03
+  call_end: 2012-04-09 15:23:03
+  call_reason: MyString
+  call_notes: MyString
+  call_location_id: 1
+  call_type_id: 1
+  contact_id: 1
+  contact_type_id: 1

@@ -11,12 +11,60 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120404184224) do
+ActiveRecord::Schema.define(:version => 20120416172514) do
+
+  create_table "call_locations", :force => true do |t|
+    t.string   "call_location"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "call_types", :force => true do |t|
+    t.string   "call_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "calls", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "call_start"
+    t.datetime "call_end"
+    t.string   "call_reason"
+    t.string   "call_notes"
+    t.integer  "call_location_id"
+    t.boolean  "call_type"
+    t.integer  "contact_id"
+    t.integer  "contact_type_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "contact_types", :force => true do |t|
+    t.string   "contact_type"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "contacts", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "contact_type_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.date     "dob"
+    t.string   "device_serial"
+  end
 
   create_table "groups", :force => true do |t|
     t.string   "group_name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_locations", :force => true do |t|
+    t.string   "location_name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|
