@@ -1,7 +1,9 @@
 class Contact < ActiveRecord::Base
 
-  validates :contact_type_id, :first_name, :last_name, :presence => true
-#  validates :dob, :presence => true, :if => :is_patient?
+  validates :contact_type_id, :presence => true 
+  validates :first_name, :presence => true
+  validates :last_name, :presence => true
+  validates :dob, :presence => true, :if => :is_patient?
 
   has_many :calls
   belongs_to :contact_type

@@ -8,8 +8,8 @@ class Ability
     if user.role?("Admin")
       can :manage, :all
     elsif user.role?("Auditor")
-      can :read, :all
-    elsif user.role?("Tech")
+      can :read, [Call, Contact]
+    elsif user.role?("Technician")
       can :read, [Call, Contact]
       can :create, [Call, Contact]
     end

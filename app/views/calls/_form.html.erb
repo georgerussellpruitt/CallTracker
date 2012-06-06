@@ -19,8 +19,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :call_type %><br />
-    <%= f.check_box :call_type %><%= f.label "Inbound?" %>
+    <%= f.label :call_direction %><br />
+    <%= f.check_box :call_direction %><%= f.label "Inbound?" %>
   </div>
 
   <div class="field">
@@ -49,8 +49,8 @@
   <br />
 
   <div class="field">
-    <%= f.label :call_reason %><br />
-    <%= f.text_field :call_reason %>
+    <%= f.label "Call Type" %><br />
+    <%= f.collection_select(:call_type_id, CallType.all, :id, :call_type, options = { :prompt => true }, { "class" => "chosen", "style" => "width:200px;" } ) %>
   </div>
   <br />
 

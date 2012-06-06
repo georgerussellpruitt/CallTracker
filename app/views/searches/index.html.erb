@@ -1,0 +1,54 @@
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+	  jQuery(".chosen").chosen();
+  });
+</script>
+
+<h1>Search Options</h1>
+
+<div class="search">
+  <fieldset>
+    <legend>Patient / Contact</legend>
+      <%= form_tag('/searches/patient') do -%>
+        <%= select_tag "uid", options_from_collection_for_select(@contacts, "id", "full_name"), :prompt => "Select a Patient", :class => "chosen", :style => "width:200px;" %>
+        <%= submit_tag "Search" %>
+      <% end %>
+  </fieldset>
+</div>
+<br />
+<br />
+
+<div class="search">
+  <fieldset>
+    <legend>Technician</legend>
+      <%= form_tag('/searches/tech') do -%>
+        <%= select_tag "uid", options_from_collection_for_select(@users, "id", "full_name"), :prompt => "Select a Tech", :style => "width:200px;" %>
+        <%= submit_tag "Search" %>
+      <% end %>
+  </fieldset>
+</div>
+<br />
+<br />
+
+<div class="search">
+  <fieldset>
+    <legend>Call Type</legend>
+      <%= form_tag('/searches/type') do -%>
+        <%= select_tag "uid", options_from_collection_for_select(@calltypes, "id", "call_type"), :prompt => "Select a Call Type", :style => "width:200px;" %>
+        <%= submit_tag "Search" %>
+      <% end %>
+  </fieldset>
+</div>
+<br />
+<br />
+
+<div class="search">
+  <fieldset>
+    <legend>Patient / Contact Search</legend>
+      <%= form_tag('/searches/patient') do -%>
+        <%= select_tag "uid", options_from_collection_for_select(@contacts, "id", "full_name"), :prompt => "Select a Patient", :style => "width:200px;" %>
+        <%= submit_tag "Search" %>
+      <% end %>
+  </fieldset>
+</div>
+

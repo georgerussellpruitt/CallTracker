@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416172514) do
+ActiveRecord::Schema.define(:version => 20120601164613) do
 
   create_table "call_locations", :force => true do |t|
     t.string   "call_location"
@@ -32,11 +32,12 @@ ActiveRecord::Schema.define(:version => 20120416172514) do
     t.string   "call_reason"
     t.string   "call_notes"
     t.integer  "call_location_id"
-    t.boolean  "call_type"
+    t.boolean  "call_direction"
     t.integer  "contact_id"
     t.integer  "contact_type_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "call_type_id"
   end
 
   create_table "contact_types", :force => true do |t|
@@ -57,6 +58,11 @@ ActiveRecord::Schema.define(:version => 20120416172514) do
 
   create_table "groups", :force => true do |t|
     t.string   "group_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "searches", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -11,16 +11,16 @@
 <div id="container">
 
   <div id="header">
-  </div>
-
-  <div id="user_bar">
-    <% if user_signed_in? %>
-      <span>Welcome, <%= current_user.first_name + " " + current_user.last_name %></span>&nbsp;<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-    <% end %>
+    <div id="user_bar">
+      <% if user_signed_in? %>
+        <span>Welcome, <%= current_user.first_name + " " + current_user.last_name %></span>&nbsp;<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <% end %>
+    </div>
   </div>
 
   <div id="left_nav">
-    
+    <%= link_to "Calls", calls_path %><br />
+    <%= link_to "Search", search_path %><br />
   </div>
 
   <div id="content">

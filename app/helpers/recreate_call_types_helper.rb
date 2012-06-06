@@ -1,0 +1,2 @@
+module RecreateCallTypesHelper
+end
