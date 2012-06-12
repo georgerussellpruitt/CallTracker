@@ -59,7 +59,7 @@ window.onload=beginrefresh
         Inbound
       <% end %>
     </td>
-    <td><%= link_to call.contact.full_name, search_path(:uid => call.contact.id, :s => "contact") %></td>
+    <td><%= link_to call.contact.full_name, searches_path(:uid => call.contact.id, :s => "contact") %></td>
     <% if current_user.role?("Admin") %>
       <td><%= link_to 'Delete', call, confirm: 'Are you sure?', method: :delete %></td>
     <% end %>

@@ -27,13 +27,13 @@
   </div>
 
   <div class="field">
-    <%= f.label "Device Serial Number" %><br />
-    <%= f.text_field :device_serial %>
+    <%= f.label "Date of Birth" %><br />
+    <%= f.date_select :dob, :include_blank => true, :start_year => 1900 %>
   </div>
 
   <div class="field">
-    <%= f.label "Date of Birth" %><br />
-    <%= f.date_select :dob, :include_blank => true %>
+    <%= f.label "Device Serial Number" %><br />
+    <%= f.text_field :device_serial %>
   </div>
   <br />
   <br />
