@@ -65,7 +65,9 @@ class SearchesController < ApplicationController
     elsif params[:s] == "type"
       @results = Call.where( :call_type_id => params[:uid] )
     elsif params[:s] == "date"
-      @results = Call.where( )
+      @srch_date_start = Date.civil(params[:search_date][:year].to_i, params[:search_date][:month].to_i, params[:search_date][:day].to_i)
+      @srch_date_end = Date.civil(params[:search_date][:year].to_i, params[:search_date][:month].to_i, params[:search_date][:day].to_i + 1)
+      @results = Call.where( :call_start => ( @srch_date_start..@srch_date_end ) )
     elsif params[:s] == "rep"
       @results = Call.where( :user_id => params[:uid] )
     end
